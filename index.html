@@ -18,21 +18,21 @@
                 <span>{{time}}</span>
             </div>
             <div class="buttons is-centered">
-                <button class="button is-light">
+                <button class="button is-light" @click="plus">
                     <span class="icon"><i class="fa fa-plus"></i></span>
                 </button>
-                <button class="button is-light">
+                <button class="button is-light" @click="minus">
                     <span class="icon"><i class="fa fa-minus"></i></span>
                 </button>
             </div>
             <div class="buttons is-centered">
-                <button class="button is-success">
-                    <span class="icon"><i class="fa fa-play"></i></span>
-                </button>
-                <button class="button is-info">
+                <button v-if="counter" class="button is-info" @click="pause">
                     <span class="icon"><i class="fa fa-pause"></i></span>
                 </button>
-                <button class="button is-danger">
+                <button v-else class="button is-success" @click="play">
+                    <span class="icon"><i class="fa fa-play"></i></span>
+                </button>
+                <button class="button is-danger" @click="stop">
                     <span class="icon"><i class="fa fa-stop"></i></span>
                 </button>
             </div>
