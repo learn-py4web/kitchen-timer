@@ -40,6 +40,7 @@ app.data = {
                         self.minutes--;
                     }
                     if (self.minutes === 0 && self.seconds === 0) {
+                        self.ring();
                         clearInterval(self.counter);
                         self.counter = null;
                     }
@@ -56,6 +57,10 @@ app.data = {
             this.pause();
             this.minutes = 0;
             this.seconds = 0;
+        },
+        ring: function() {
+            let audio = new Audio("ring.mp3");
+            audio.play();
         }
     }
 };
