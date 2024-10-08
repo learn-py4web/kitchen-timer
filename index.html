@@ -11,7 +11,7 @@
 
 <body>
 
-    <section class="section" id="app">
+    <section class="section" id="app" v-cloak>
         <div class="container has-text-centered">
             <h1 class="title">Kitchen Timer</h1>
             <div class="the-clock is-size-1">
@@ -26,13 +26,13 @@
                 </button>
             </div>
             <div class="buttons is-centered">
-                <button v-if="counter" class="button is-info">
+                <button v-if="counter" class="button is-info" @click="pause">
                     <span class="icon"><i class="fa fa-pause"></i></span>
                 </button>
-                <button v-else class="button is-success">
+                <button v-else class="button is-success" @click="play">
                     <span class="icon"><i class="fa fa-play"></i></span>
                 </button>
-                <button class="button is-danger">
+                <button class="button is-danger" @click="reset">
                     <span class="icon"><i class="fa fa-stop"></i></span>
                 </button>
             </div>
